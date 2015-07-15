@@ -1,0 +1,259 @@
+<template name="evalForm">
+{{#if evalExists}}
+    {{#each evals}}
+        {{> eval}}
+    {{/each}}
+{{else}}
+    {{> eval}}
+{{/if}}
+</template>
+
+<template name="eval">
+    <form id="evalForm">
+    <h2>Beer Evaluation Sheet</h2>
+
+    <div class="row">
+        <input type="text" name="EvaluatorName" class="required" placeholder="Your name" value="{{EvaluatorName}}" />
+        <div class="input-error hidden"><small class="error">Required</small></div>
+    </div>
+    <div class="row">
+        <input type="text" name="BeerName" class="required" placeholder="Beer name" value="{{BeerName}}" />
+        <div class="input-error hidden"><small class="error">Required</small></div>
+    </div>
+    <div class="row">
+        <input type="text" name="BeerStyle" class="required" placeholder="Beer style" value="{{BeerStyle}}" />
+        <div class="input-error hidden"><small class="error">Required</small></div>
+    </div>
+        
+    <fieldset>
+        <legend>Appearance</legend>
+        {{> rangeSettings}}
+
+        <div class="row">
+            <label>Color</label>
+            <input type="range" class="slider" min="-10" max="10" value="{{Color}}" name="Color" step="1" list="rangeSettings">
+            <div class="range-label">
+                <span class="low">Straw</span>
+                <span class="mid"></span>
+                <span class="high">Black</span>
+            </div>
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Clarity" name="Clarity" low="Brilliant" mid="Dull" high="Cloudy" value=Clarity}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Head" name="Head" low="Poor" mid="Good" high="Persistent" value=Head}}
+        </div>
+
+        <label>Notes</label>
+        <input type="text" placeholder="Note" name="AppearanceNote" value="{{AppearanceNote}}">
+        
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Aroma</legend>
+
+        <div class="row">
+            {{> rangeSlider title="Intensity" name="AromaIntensity" low="Faint" mid="" high="Strong" value=AromaIntensity}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Balance" name="AromaBalance" low="Sweet" mid="" high="Sharp" value=AromaBalance}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Impression" name="AromaImpression" low="Off" mid="Neutral" high="Nice" value=AromaImpression}}
+        </div>
+
+        <div class="row">
+            <label>Malt Aroma</label>
+            <ul class="checkbox-list">
+                {{#each maltOptions}}
+                    <li><input type="checkbox" name="AromaMalt" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="AromaMalt" value="{{AromaMalt}}" />
+        </div>
+
+        <div class="row">
+            <label>Hops Aroma</label>
+            <ul class="checkbox-list">
+                {{#each hopsOptions}}
+                    <li><input type="checkbox" name="AromaHops" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="AromaHops" value="{{AromaHops}}" />
+        </div>
+
+        <div class="row">
+            <label>Other</label>
+            <ul class="checkbox-list">
+                {{#each otherAroma}}
+                    <li><input type="checkbox" name="AromaOther" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="AromaOther" value="{{AromaOther}}" />
+        </div>
+
+        <label>Notes</label>
+        <input type="text" placeholder="Note" name="AromaNote" value="{{AromaNote}}">
+        
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Flavor</legend>
+
+        <div class="row">
+            {{> rangeSlider title="Intensity" name="FlavorIntensity" low="Faint" mid="" high="Strong" value=FlavorIntensity}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Balance" name="FlavorBalance" low="Sweet" mid="" high="Bitter" value=FlavorBalance}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Impression" name="FlavorImpression" low="Off" mid="Neutral" high="Nice" value=FlavorImpression}}
+        </div>
+
+        <div class="row">
+            <label>Malt Flavor</label>
+            <ul class="checkbox-list">
+                {{#each maltOptions}}
+                    <li><input type="checkbox" name="FlavorMalt" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="FlavorMalt" value="{{FlavorMalt}}" />
+        </div>
+
+        <div class="row">
+            <label>Hops Flavor</label>
+            <ul class="checkbox-list">
+                {{#each hopsOptions}}
+                    <li><input type="checkbox" name="FlavorHops" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="FlavorHops" value="{{FlavorHops}}" />
+        </div>
+
+        <div class="row">
+            <label>Other</label>
+            <ul class="checkbox-list">
+                {{#each otherFlavor}}
+                    <li><input type="checkbox" name="FlavorOther" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="FlavorOther" value="{{FlavorOther}}" />
+        </div>
+
+        <label>Notes</label>
+        <input type="text" placeholder="Note" name="FlavorNote" value="{{FlavorNote}}">
+    </fieldset>
+
+    <fieldset>
+        <legend>Mountfeel</legend>
+
+        <div class="row">
+            {{> rangeSlider title="Body" name="Body" low="Light" mid="Medium" high="Full" value=Body}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Carbonation" name="Carbonation" low="Faint" mid="Lively" high="Excessive" value=Carbonation}}
+        </div>
+
+        <div class="row">
+            <label>Sensation</label>
+            <ul class="checkbox-list">
+                {{#each sensations}}
+                    <li><input type="checkbox" name="Sensation" value="{{this}}"><label for="{{this}}">{{this}}</label></li>
+                {{/each}}
+            </ul>
+            <input type="hidden" name="Sensation" value="Sensation" />
+        </div>
+
+        <label>Notes</label>
+        <input type="text" placeholder="Note" name="MouthfeelNote" value="{{MouthfeelNote}}">
+    </fieldset>
+
+    <fieldset>
+        <legend>Finish</legend>
+        <div class="row">
+        {{> rangeSlider title="Length" name="FinishLength" low="Short" mid="Medium" high="Long" value=FinishLength}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Intensity" name="FinishIntensity" low="Faint" mid="" high="Strong" value=FinishIntensity}}
+        </div>
+        <div class="row">
+            {{> rangeSlider title="Balance" name="FinishBalance" low="Sweet" mid="" high="Bitter" value=FinishBalance}}
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>General Impression</legend>
+        <div class="row">
+            {{> rangeSlider title="Craftsmanship" name="Craftsmanship" low="Boring" mid="" high="Excellent" value=Craftsmanship}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Freshness" name="Freshness" low="Off" mid="Stale" high="Fresh" value=Freshness}}
+        </div>
+
+        <div class="row">
+            {{> rangeSlider title="Personal Taste" name="PersonalTaste" low="Disliked" mid="" high="Liked" value=PersonalTaste}}
+
+            <label>Notes</label>
+            <textarea placeholder="Note" name="GeneralNote" rows="5" value="{{GeneralNote}}"></textarea>
+        </div>
+    </fieldset>
+
+
+
+    <input type="button" id="submitButton" class="button round" value="Submit">
+    </form>
+</template>
+
+<template name="rangeSlider">
+    <label>{{title}}</label>
+    <input type="range" min="-10" max="10" value="{{value}}" name="{{name}}" step="1" list="rangeSettings">
+    <div class="range-label">
+        <span class="low">{{low}}</span>
+        <span class="mid">{{mid}}</span>
+        <span class="high">{{high}}</span>
+    </div>
+</template>
+
+<template name="rangeSettings">
+    <datalist id="rangeSettings">
+        <option>-10</option>
+        <option>-9</option>
+        <option>-8</option>
+        <option>-7</option>
+        <option>-6</option>
+        <option>-5</option>
+        <option>-4</option>
+        <option>-3</option>
+        <option>-2</option>
+        <option>-1</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </datalist>
+</template>
+
+<template name="thankYou">
+    <section id="confirmMsg">
+        Thank you for evaluating our beer!
+    </section>
+</template>

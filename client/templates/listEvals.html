@@ -1,0 +1,36 @@
+<template name="listEvals">
+<h2>Evaluations</h2>
+  <button class="delete button small">Delete checked evaluations</button>
+
+  <table class="list-table" border="1">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Beer Name</th>
+        <th>Style</th>
+        <th>Evaluator</th>
+        <th>Evaluated on</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each listEvals}}
+        {{> evaluation}}
+      {{/each}}
+    </tbody>
+  </table>  
+</template>
+
+
+<template name="evaluation">
+  <tr>
+    <td>
+      <input type="checkbox" id="{{_id}}" checked="{{checked}}" class="toggle-checked" />
+    </td>
+    <td>{{BeerName}}</td>
+    <td>{{BeerStyle}}</td>
+    <td>{{EvaluatorName}}</td>
+    <td>{{prettifyDate CreatedAt}}</td>
+    <td><button class="view-eval button small">View</button></td>
+  </tr>
+</template>

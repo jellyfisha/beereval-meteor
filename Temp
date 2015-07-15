@@ -1,0 +1,51 @@
+
+        <div id="{{_id}}" class="content">
+        
+            <section class="appearance">
+                <h3>Appearance</h3>
+                <span>Color: {{Color}}</span>
+                <span>Clarity: {{Clarity}}</span>
+                <span>Head: {{Head}}</span>
+                <span>Notes: {{AppearanceNote}}</span>
+            </section>
+            <section class="aroma">
+                <h3>Aroma</h3>
+                <span>Intensity: {{AromaIntensity}}</span>
+                <span>Balance: {{AromaBalance}}</span>
+                <span>Impression: {{AromaImpression}}</span>
+                <span>Malt Aroma: {{AromaMalt}}</span>
+                <span>Hops Aroma: {{AromaHops}}</span>
+                <span>Other: {{AromaOther}}</span>
+                <span>Notes: {{AromaNote}}</span>
+            </section>
+            <section class="flavor">
+                <h3>Flavor</h3>
+                <span>Intensity: {{FlavorIntensity}}</span>
+                <span>Balance: {{FlavorBalance}}</span>
+                <span>Impression: {{FlavorImpression}}</span>
+                <span>Malt Flavor: {{FlavorMalt}}</span>
+                <span>Hops Flavor: {{FlavorHops}}</span>
+                <span>Other: {{FlavorOther}}</span>
+                <span>Notes: {{FlavorNote}}</span>
+            </section>
+            <section class="mouthfeel">
+                <h3>Mouthfeel</h3>
+                <span>Body: {{Body}}</span>
+                <span>Carbonation: {{Carbonation}}</span>
+                <span>Sensation: {{Sensation}}</span>
+                <span>Notes: {{MouthfeelNote}}</span>
+            </section>
+            <section class="finish">
+                <h3>Finish</h3>
+                <span>Length: {{FinishLength}}</span>
+                <span>Intensity: {{FinishIntensity}}</span>
+                <span>Balance: {{FinishBalance}}</span>
+            </section>
+            <section class="general">
+                <h3>General Impression</h3>
+                <span>Craftsmanship: {{Craftsmanship}}</span>
+                <span>Freshness: {{Freshness}}</span>
+                <span>Personal Taste: {{PersonalTaste}}</span>
+                <span>Notes: {{GeneralNote}}</span>
+            </section> 
+        </div>

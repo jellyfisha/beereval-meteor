@@ -1,0 +1,216 @@
+// Color palette: http://www.colourlovers.com/palette/728391/Dig_My_Olive_Branch
+
+@import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+
+body {
+    padding: 10px;
+    //background-color: #E5EDB8;
+    margin: 0 auto;
+    @extend .small-12;
+    @extend .medium-10;
+    @extend .large-6;
+
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+fieldset legend {
+    font-size: 1.5rem;
+    color: #837B47;
+}
+
+label {
+    font-size: 1rem;
+    color: #5A3D31;
+    font-weight: bold;
+}
+/*
+.container {
+    margin: 0 auto;
+    @extend .small-12;
+    @extend .medium-10;
+    @extend .large-6;
+}*/
+
+.colorRange {
+    input[type='range'] {
+        height: 30px;
+    }
+}
+
+.range-label {
+    width: 100%;
+    font-size: 0;
+    margin-bottom: 10px;
+
+    span {
+        @extend .small-4;
+        display: inline-block;
+        font-size: 0.9rem;
+        color: #837B47;
+    }
+
+    .mid {
+        text-align: center;
+    }
+
+    .high {
+        text-align: right;
+    }
+}
+
+.range-slider {
+    margin: 0.3rem 0;
+
+    &.round .range-slider-handle {
+        background-color: #300018;
+    }
+
+    .range-slider-active-segment {
+        background-color: #E5EDB8;
+    }    
+}
+
+.checkbox-list {
+    list-style: none;
+
+    input {
+        margin-bottom: 0;
+    }
+
+    li {
+        padding: 0;
+        float: left;
+
+        label {
+            font-weight: normal;
+        }
+       
+    }
+}
+
+.list-table {
+    display: table;
+
+    .button {
+        margin: 0;
+    }
+
+    input {
+        margin: 0;
+    }
+}
+
+.button {
+ //   background-color: #698C44;
+  //  border-color: #698C44;
+
+    &:hover {
+   //     background-color: #ADB85F;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+input[type=range] {
+  //-webkit-appearance: none;
+  width: 100%;
+  margin: 5.7px 0;
+}
+
+input[type=range].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: -2px 0;
+}
+input[type=range].slider:focus {
+  outline: none;
+}
+input[type=range].slider::-webkit-slider-runnable-track {
+  width: 100%;
+  //height: 31px;
+  cursor: pointer;
+  //box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //background: #484d4d;
+  background-image: linear-gradient(
+      to right, 
+      #F1D77B, #D19F55, #BA7237, #8F4F29, #63311A, #431705, #151313
+    );
+  border-radius: 0px;
+  //border: 0px solid #010101;
+}
+input[type=range].slider::-webkit-slider-thumb {
+/*  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 27px;
+  width: 15px;
+  border-radius: 0px;
+  background: #fffff2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 2px;*/
+}
+input[type=range].slider:focus::-webkit-slider-runnable-track {
+  //background: #545a5a;
+}
+input[type=range].slider::-moz-range-track {
+  width: 100%;
+  height: 31px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #484d4d;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].slider::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 27px;
+  width: 15px;
+  border-radius: 0px;
+  background: rgba(255, 67, 95, 0.93);
+  cursor: pointer;
+}
+input[type=range].slider::-ms-track {
+  width: 100%;
+  height: 31px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].slider::-ms-fill-lower {
+  background: #3c4040;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].slider::-ms-fill-upper {
+  background: #484d4d;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].slider::-ms-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  width: 15px;
+  border-radius: 0px;
+  background: rgba(255, 67, 95, 0.93);
+  cursor: pointer;
+  height: 27px;
+}
+input[type=range].slider:focus::-ms-fill-lower {
+  background: #484d4d;
+}
+input[type=range].slider:focus::-ms-fill-upper {
+  background: #545a5a;
+}
